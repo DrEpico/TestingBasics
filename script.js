@@ -33,5 +33,23 @@ const calculator = {
     }
 };
 
+function analyzeArray(numbers) {
+    if (!Array.isArray(numbers) || numbers.length === 0 || !numbers.every(num => typeof num === 'number')) {
+        throw new Error('Input must be a non-empty array of numbers');
+    }
 
-module.exports = { getOne, capitalise, reverseString, calculator };
+    const sum = numbers.reduce((acc, num) => acc + num, 0);
+    const average = sum / numbers.length;
+    const min = Math.min(...numbers);
+    const max = Math.max(...numbers);
+    const length = numbers.length;
+
+    return {
+        average,
+        min,
+        max,
+        length
+    };
+}
+
+module.exports = { getOne, capitalise, reverseString, calculator, analyzeArray };

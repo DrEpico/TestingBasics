@@ -47,3 +47,37 @@ describe('calculator', () => {
     });
 });
 
+describe('analyzeArray', () => {
+    test('should return correct analysis for a valid array of numbers', () => {
+        const result = assignment.analyzeArray([1, 8, 3, 4, 2, 6]);
+        expect(result).toEqual({
+            average: 4,
+            min: 1,
+            max: 8,
+            length: 6
+        });
+    });
+
+    test('should handle an array with a single number', () => {
+        const result = assignment.analyzeArray([5]);
+        expect(result).toEqual({
+            average: 5,
+            min: 5,
+            max: 5,
+            length: 1
+        });
+    });
+    
+    test('should throw an error for an empty array', () => {
+        expect(() => assignment.analyzeArray([])).toThrow('Input must be a non-empty array of numbers');
+    });
+
+    test('should throw an error for an array with non-number elements', () => {
+        expect(() => assignment.analyzeArray([1, 'a', 3])).toThrow('Input must be a non-empty array of numbers');
+    });
+
+    test('should throw an error for a non-array input', () => {
+        expect(() => assignment.analyzeArray('not an array')).toThrow('Input must be a non-empty array of numbers');
+    });
+});
+
