@@ -1,13 +1,1 @@
-{ 
-  "name": "testing",
-  "type": "module",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "private": "true",
-  "scripts": {
-    "test": "jest"
-  },
-  "author": "",
-  "license": "ISC"
-}
+{"name":"testing","type":"module","version":"1.0.0","description":"","main":"index.js","private":"true","scripts":{"test":"jest"},"author":"","license":"ISC","dependencies":{"jest":"^29.7.0"}}
